@@ -1,0 +1,49 @@
+# This workflow copy content modified in the main branch to production branch.
+
+name: Copy-websites.fileformat.com-Images
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  # I actually disable this workflow to run as we don't need this any more.
+  push:
+    branches: [ main ]
+    paths:
+      - 'content/**'
+      - 'static/images/**'
+  pull_request:
+    branches: [ main1 ]
+    paths:
+      - 'content/**'
+      - 'static/images/**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+    # Step 1 - Checks-out your repository under $GITHUB_WORKSPACE
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+    - name: Copy websites.fileformat.com Images
+      uses: andstor/copycat-action@v3
+      with:
+        personal_token: ${{ secrets.REPO_TOKEN }}
+        src_path: ./static/.
+        dst_path: /static/images/fileformat/com/
+        dst_owner: Aspose
+        dst_repo_name: websites-theme
+        dst_branch: main
+        src_branch: main
+        clean: true
