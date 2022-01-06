@@ -10,12 +10,10 @@ on:
     branches: [ main ]
     paths:
       - 'content/**'
-      - 'static/images/**'
   pull_request:
     branches: [ main1 ]
     paths:
       - 'content/**'
-      - 'static/images/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
