@@ -17,7 +17,7 @@ weight: 8
 {{< ListingPage/Common/ProductFamilyBox/wrapper >}}
     {{< ListingPage/Groupdocs-app/box-wrapper >}}
         {{< ListingPage/Groupdocs-app/box >}}
-        <h4><a href="https://wiki.fileformat.com/word-processing/">Word Processing</a></h4>
+        <h4><a href="https://wiki.fileformat.com/word-processing/">Word Processing </a></h4>
         <span class="asposefor">File Formats</span>
         <h6>Word Processing files including TXT, RTF, DOC, DOCX, DOT &amp; DOTX are used to store plain or formatted text.</h6>
         {{< /ListingPage/Groupdocs-app/box >}}
