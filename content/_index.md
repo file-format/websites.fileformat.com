@@ -4,7 +4,6 @@ description:
 keywords: 
 draft: false
 weight: 8
-aliases: [/fileformat/com/]
 ---
 
 {{< PageLayout/wrapper >}}
